@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var sum = 0;
+            var items = "";
+            $('#addberger').click(function () {
+                //alert('hi')
+                var result = $('#bergerqty').val();
+                if(result=='')
+                {
+                    alert('Plesea add any of these....');
+                }
+                else{
+                items = items + "berger,";
+                $('#itme_name').text('items ='+ items);
+                
+                sum = sum + (result * berger)
+                $('#Sumtest1').text('Total =' + sum)
+                
+            }
+            })
+            $('#removeberger').click(function () {
+                var result =$('#bergerqty').val();
+                if(result==''){
+                    alert('Plesea add any of these....');
+
+                }
+                else{
+                    
+                items = items.replace('berger,','');
+                $('#itme_name').text(items);
+                sum = sum - berger;
+                $('#Sumtest1').text('total =' + sum);
+                $('#bergerqty').val('');
+
+                }
+            })
+
+            $('#Addcolddrink').click(function () {
+                //alert('hi')
+                var result = $('#colddrinkqty').val();
+                if(result=='')
+                {
+                    alert('Plesea add any of these....');
+                }
+                else{
+                items = items + "Cold-drink,";
+                $('#itme_name').text('items =' + items);
+
+                sum = sum + (result * colddrink)
+                $('#Sumtest1').text('Total =' + sum)
+                
+                }
+            })
+            $('#removecolddrink').click(function () {
+                var result =$('#colddrinkqty').val();
+                if(result==''){
+                    alert('Plesea add any of these....');
+                    
+                }
+                else{
+                items = items.replace('Cold-drink,', '');
+                $('#itme_name').text(items);
+                sum = sum - colddrink;
+                $('#Sumtest1').text('total =' + sum);
+                $('#colddrinkqty').val('');
+            }
+            })
+            $('#addPizza').click(function () {
+                //alert('hi')
+                var result = $('#Pizzaqty').val();
+                if(result=='')
+                {
+                    alert('Plesea add any of these....');
+                }
+                else{
+                items = items + "Pizza,";
+                $('#itme_name').text('items =' + items);
+
+                sum = sum + (result * Pizza)
+                $('#Sumtest1').text('Total =' + sum)
+                
+                }
+            })
+            $('#RemovePizza').click(function () {
+                var result =$('#Pizzaqty').val();
+                if(result==''){
+                    alert('Plesea add any of these....');
+                }
+                else{
+                items = items.replace('Pizza,', '');
+                $('#itme_name').text(items);
+                sum = sum - Pizza;
+                $('#Sumtest1').text('total =' + sum);
+                $('#Pizzaqty').val('');
+            }
+            })
+
+            $('#addChicken').click(function () {
+                //alert('hi')
+                var result = $('#Chickenqty').val();
+                if(result==''){
+                    alert('Plesea add any of these....');
+                }
+                else{
+                items = items + "Chicken,";
+                $('#itme_name').text('items =' + items);
+
+                sum = sum + (result * Chicken)
+                $('#Sumtest1').text('Total =' + sum)
+                //clear();
+                }
+            })
+            $('#removeChicken').click(function () {
+                var result = $('#Chickenqty').val();
+                if(result=='')
+                {
+                    alert('Plesea add any of these....');
+                }
+                else{
+                items = items.replace('Chicken,', '');
+                $('#itme_name').text(items);
+                sum = sum - Chicken;
+                $('#Sumtest1').text('total =' + sum);
+                $('#Chickenqty').val('');
+            }
+
+            })
+
+
+        })
+        function clear() {
+            $('#bergerqty').val('');
+            $('#colddrinkqty').val('');
+            $('#Pizzaqty').val('');
+            $('#Chickenqty').val('');
+        }
+
+    </script>
+    <style>
+        .rowclass {
+            margin:auto;
+        }
+        .bg{
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h4 align="center"><i><u>MohanRestarunt</u></i></h4>
+    <div class="row rowclass">
+        <div class="col-lg ">
+        <div class="col-lg bg-light">
+            <h4><i><u>Item Description</u></i></h4>
+            <div class="row">
+                <div class="col-lg-2 text-white bg-dark">Product</div>
+                <div class="col-lg-1 text-white bg-dark">Price</div>
+                <div class="col-lg-1 text-white bg-dark">QTY</div>
+                <div class="col-lg-2 text-white bg-dark">Perform Action</div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm-2 bg-ligh ">Berger</div>
+                <div class="col-sm-1"><script> var berger = 250; document.write(berger);</script></div>
+                <div class="col-sm-1 bg-light"><input type="text" id="bergerqty"/></div>
+                <div class="col-sm-4 "><button id="addberger">ADD</button><button id="removeberger">Remove</button></div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-sm-2 text-white bg-dark">Cold-drink</div>
+                <div class="col-sm-1"><script> var colddrink = 150; document.write(colddrink);</script></div>
+                <div class="col-sm-1 bg-light"><input type="text" id="colddrinkqty"/></div>
+                <div class="col-sm-4 "><button id="Addcolddrink">ADD</button><button id="removecolddrink">Remove</button></div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-sm-2 bg-ligh">Pizza</div>
+                <div class="col-sm-1"><script> var Pizza = 450; document.write(Pizza);</script></div>
+                <div class="col-sm-1 bg-light"><input type="text" id="Pizzaqty"/></div>
+                <div class="col-sm-4 "><button id="addPizza">ADD</button><button id="RemovePizza">Remove</button></div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-sm-2 text-white bg-dark">Chicken ROLL</div>
+                <div class="col-sm-1"><script> var Chicken = 75; document.write(Chicken);</script></div>
+                <div class="col-sm-1 bg-light"><input type="text" id="Chickenqty"/></div>
+                <div class="col-sm-4 "><button id="addChicken">ADD</button><button id="removeChicken">Remove</button></div>
+            </div>
+
+            </div>
+            
+            </div>
+        </div>
+            <div class="col-sm-4 bg-light">
+                <h4><i><u>Bill Details</u></i></h4>
+                <table>
+                    <tr>
+                        <td><div id="itme_name"></div></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><div id="Sumtest1"></div></td>
+                    </tr>
+                </table>
+                <div id="Sumtest"></div>
+            </div>
+</body>
+</html>
